@@ -8,7 +8,7 @@ namespace MeuAcerto.Selecao.KataGildedRose
         [Fact]
         public void foo()
         {
-            IList<Item> Items = new List<Item> { new Item { Nome = "foo", PrazoParaVenda = 0, Qualidade = 0 } };
+            IList<Item> Items = new List<Item> { new Item { Nome = "fixme", PrazoParaVenda = 0, Qualidade = 0 } };
             GildedRose app = new GildedRose(Items);
             app.AtualizarQualidade();
             Assert.Equal("fixme", Items[0].Nome);
