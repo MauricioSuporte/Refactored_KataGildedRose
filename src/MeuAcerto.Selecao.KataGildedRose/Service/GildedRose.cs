@@ -18,7 +18,11 @@ namespace MeuAcerto.Selecao.KataGildedRose
                 {
                     if (Itens[i].Qualidade > 0)
                     {
-                        if (Itens[i].Nome != "Dente do Tarrasque")
+                        if (Itens[i].Nome.Contains("Conjurado"))
+                        {
+                            Itens[i].Qualidade = Itens[i].Qualidade - 2;
+                        }
+                        else if (Itens[i].Nome != "Dente do Tarrasque")
                         {
                             Itens[i].Qualidade = Itens[i].Qualidade - 1;
                         }
