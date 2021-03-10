@@ -9,7 +9,7 @@ namespace MeuAcerto.Selecao.KataGildedRose
 		public static void Main(string[] args)
 		{
 			var repositorio = new Repositorio();
-			IList<Item> itens = repositorio.get();
+			IList<Item> itens = repositorio.GetItens();
 
 			var app = new GildedRose(itens);
 

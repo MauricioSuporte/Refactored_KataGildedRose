@@ -6,7 +6,7 @@ namespace MeuAcerto.Selecao.KataGildedRose.Repository
 {
     public class Repositorio
     {
-		public IList<Item> get()
+		public IList<Item> GetItens()
         {
 			IList<Item> itens = new List<Item>{
 				new Item {Nome = "Corselete +5 DEX", PrazoParaVenda = 10, Qualidade = 20},
