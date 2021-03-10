@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using MeuAcerto.Selecao.KataGildedRose.Atualizadores;
+using MeuAcerto.Selecao.KataGildedRose.Enum;
 
 namespace MeuAcerto.Selecao.KataGildedRose
 {
@@ -12,81 +14,10 @@ namespace MeuAcerto.Selecao.KataGildedRose
 
         public void AtualizarQualidade()
         {
-            for (var i = 0; i < Itens.Count; i++)
+            foreach (Item item in Itens)
             {
-                if (Itens[i].Nome != "Queijo Brie Envelhecido" && Itens[i].Nome != "Ingressos para o concerto do Turisas")
-                {
-                    if (Itens[i].Qualidade > 0)
-                    {
-                        if (Itens[i].Nome.Contains("Conjurado"))
-                        {
-                            Itens[i].Qualidade = Itens[i].Qualidade - 2;
-                        }
-                        else if (Itens[i].Nome != "Dente do Tarrasque")
-                        {
-                            Itens[i].Qualidade = Itens[i].Qualidade - 1;
-                        }
-                    }
-                }
-                else
-                {
-                    if (Itens[i].Qualidade < 50)
-                    {
-                        Itens[i].Qualidade = Itens[i].Qualidade + 1;
-
-                        if (Itens[i].Nome == "Ingressos para o concerto do Turisas")
-                        {
-                            if (Itens[i].PrazoParaVenda < 11)
-                            {
-                                if (Itens[i].Qualidade < 50)
-                                {
-                                    Itens[i].Qualidade = Itens[i].Qualidade + 1;
-                                }
-                            }
-
-                            if (Itens[i].PrazoParaVenda < 6)
-                            {
-                                if (Itens[i].Qualidade < 50)
-                                {
-                                    Itens[i].Qualidade = Itens[i].Qualidade + 1;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (Itens[i].Nome != "Dente do Tarrasque")
-                {
-                    Itens[i].PrazoParaVenda = Itens[i].PrazoParaVenda - 1;
-                }
-
-                if (Itens[i].PrazoParaVenda < 0)
-                {
-                    if (Itens[i].Nome != "Queijo Brie Envelhecido")
-                    {
-                        if (Itens[i].Nome != "Ingressos para o concerto do Turisas")
-                        {
-                            if (Itens[i].Qualidade > 0)
-                            {
-                                if (Itens[i].Nome != "Dente do Tarrasque")
-                                {
-                                    Itens[i].Qualidade = Itens[i].Qualidade - 1;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Itens[i].Qualidade = Itens[i].Qualidade - Itens[i].Qualidade;
-                        }
-                    }
-                    else
-                    {
-                        if (Itens[i].Qualidade < 50)
-                        {
-                            Itens[i].Qualidade = Itens[i].Qualidade + 1;
-                        }
-                    }
-                }
+                var verificadorDeAtualizacoes = VerificadorDeAtualizacoes.InstanciaTipoItem(item);
+                verificadorDeAtualizacoes.AtualizarQualidade(item);
             }
         }
     }
