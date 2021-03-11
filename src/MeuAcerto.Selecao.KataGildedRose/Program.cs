@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using MeuAcerto.Selecao.KataGildedRose.Repository;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace MeuAcerto.Selecao.KataGildedRose
 {
@@ -8,6 +10,7 @@ namespace MeuAcerto.Selecao.KataGildedRose
 	{
 		public static void Main(string[] args)
 		{
+			CreateHostBuilder(args).Build().Run();
 			var repositorio = new Repositorio();
 			IList<Item> itens = repositorio.GetItens();
 
@@ -27,5 +30,11 @@ namespace MeuAcerto.Selecao.KataGildedRose
 			}
 		}
 
+		public static IHostBuilder CreateHostBuilder(string[] args) =>
+
+			Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
+			{
+				webBuilder.UseStartup<Startup>();
+			});
 	}
 }
