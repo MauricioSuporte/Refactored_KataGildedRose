@@ -11,11 +11,11 @@ namespace MeuAcerto.Selecao.KataGildedRose
 		public static void Main(string[] args)
 		{
 			CreateHostBuilder(args).Build().Run();
+
 			var repositorio = new Repositorio();
 			IList<Item> itens = repositorio.GetItens();
 
 			var app = new GildedRose(itens);
-
 
 			for (var i = 0; i < 31; i++)
 			{
@@ -31,10 +31,10 @@ namespace MeuAcerto.Selecao.KataGildedRose
 		}
 
 		public static IHostBuilder CreateHostBuilder(string[] args) =>
-
-			Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
-			{
-				webBuilder.UseStartup<Startup>();
-			});
+			Host.CreateDefaultBuilder(args)
+				.ConfigureWebHostDefaults(webBuilder =>
+				{
+					webBuilder.UseStartup<Startup>();
+				});
 	}
 }
