@@ -1,6 +1,6 @@
 <template>
     <div>
-        <table>
+        <table class="table table-bordered table-striped table-dark text-center">
             <thead>
                 <tr>
                     <th>
@@ -15,7 +15,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in itens" v-bind:key="item.nome">
+                <tr v-for="item in itens" v-bind:key="item.nome" >
                     <td>
                         {{item.nome}}
                     </td>
@@ -28,6 +28,8 @@
                 </tr>
             </tbody>
         </table>
+        <hr>
+        <button v-on:click="AtualizarQualidade()" type="button" class="btn btn-primary">Atualizar Qualidade</button>
     </div>
 </template>
 
@@ -42,15 +44,18 @@ export default {
     }
   },
   methods: {
-    lista: (scope) => {
+    listar: (scope) => {
       axios.get(`https://localhost:44336/api`).then((res)=> {
         console.log(res)
         scope.itens = res.data
       })
+    },
+    AtualizarQualidade: () => {
+        alert('Finji q atualizei')
     }
   },
   created() {
-    this.lista(this)
+    this.listar(this)
   }
 }
 </script>

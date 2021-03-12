@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\MeuAcerto.Selecao.KataGildedRose",
-    "\\src\\MeuAcerto.Selecao.KataGildedRose\\Repository",
-    "\\src\\MeuAcerto.Selecao.KataGildedRose\\Service"
+    "\\src\\gilded_front",
+    "\\src\\gilded_front\\src"
   ],
-  "SelectedNode": "\\src\\MeuAcerto.Selecao.KataGildedRose\\MeuAcerto.Selecao.KataGildedRose.csproj",
+  "SelectedNode": "\\src\\MeuAcerto.Selecao.KataGildedRose.sln",
   "PreviewInSolutionExplorer": false
 }
