@@ -9,8 +9,9 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
+using VueCliMiddleware;
 
-namespace MeuAcerto.Selecao.KataGildedRose
+namespace KataGildedRose
 {
     public class Startup
     {
@@ -25,6 +26,10 @@ namespace MeuAcerto.Selecao.KataGildedRose
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "Gilded_Front-End";
+            });
         }
 
         // Este método é chamado em tempo de execução. Usar este método para configurar o HTTP request pipeline.
@@ -41,9 +46,25 @@ namespace MeuAcerto.Selecao.KataGildedRose
 
             app.UseAuthorization();
 
+            app.UseSpaStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSpa(spa =>
+            {
+                if (env.IsDevelopment())
+                    spa.Options.SourcePath = "Gilded_Front-End";
+                else
+                    spa.Options.SourcePath = "dist";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseVueCli(npmScript: "serve");
+                }
+
             });
         }
     }
