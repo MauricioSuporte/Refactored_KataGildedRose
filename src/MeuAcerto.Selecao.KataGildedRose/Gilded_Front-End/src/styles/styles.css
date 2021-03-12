@@ -1,0 +1,8 @@
+body {
+    background: linear-gradient(-45deg, #05202b, #0c3f33);
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
