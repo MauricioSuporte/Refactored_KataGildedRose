@@ -29,13 +29,15 @@
             </tbody>
         </table>
         <hr>
-        <button v-on:click="AtualizarQualidade()" type="button" class="btn btn-primary">Atualizar Qualidade</button>
+        <div class="text-center">
+            <button v-on:click="atualizarQualidade()" type="button" class="btn btn-primary">Atualizar Qualidade</button>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-
+let scopoItens = null;
 export default {
   name: 'Itens',
   data: () => {
@@ -44,18 +46,28 @@ export default {
     }
   },
   methods: {
-    listar: (scope) => {
+    listar: () => {
       axios.get(`https://localhost:44336/api`).then((res)=> {
-        console.log(res)
-        scope.itens = res.data
+        scopoItens.itens = res.data
       })
     },
-    AtualizarQualidade: () => {
+    atualizarQualidade: () => {
+        axios.post(`https://localhost:44336/api`)
+            .then(()=> {
+                scopoItens.listar()
+        })
         alert('Finji q atualizei')
     }
   },
   created() {
-    this.listar(this)
+    scopoItens = this;
+    this.listar()
   }
 }
 </script>
+
+<style scoped>
+button {
+  margin-bottom: 3%;
+}
+</style>
