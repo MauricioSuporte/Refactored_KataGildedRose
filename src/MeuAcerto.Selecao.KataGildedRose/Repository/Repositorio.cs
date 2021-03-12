@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MeuAcerto.Selecao.KataGildedRose.Repository
+namespace KataGildedRose.Repository
 {
     public class Repositorio
     {

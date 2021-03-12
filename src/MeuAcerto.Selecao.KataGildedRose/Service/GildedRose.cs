@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using MeuAcerto.Selecao.KataGildedRose.Atualizadores;
-using MeuAcerto.Selecao.KataGildedRose.Enum;
+using KataGildedRose.Atualizadores;
+using KataGildedRose.Enum;
 
-namespace MeuAcerto.Selecao.KataGildedRose
+namespace KataGildedRose
 {
     class GildedRose
     {

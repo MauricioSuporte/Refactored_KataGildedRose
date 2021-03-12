@@ -1,4 +1,4 @@
-﻿namespace MeuAcerto.Selecao.KataGildedRose
+﻿namespace KataGildedRose
 {
     public class Item
     {

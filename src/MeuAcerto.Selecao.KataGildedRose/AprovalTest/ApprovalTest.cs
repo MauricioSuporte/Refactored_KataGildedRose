@@ -5,7 +5,7 @@ using ApprovalTests;
 using ApprovalTests.Reporters;
 using Xunit;
 
-namespace MeuAcerto.Selecao.KataGildedRose
+namespace KataGildedRose
 {
     [UseReporter(typeof(DiffReporter))]
     public class ApprovalTest

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MeuAcerto.Selecao.KataGildedRose.Atualizadores
+namespace KataGildedRose.Atualizadores
 {
     class AtualizarQualidadeQueijoBrie : VerificadorDeAtualizacoes
     {

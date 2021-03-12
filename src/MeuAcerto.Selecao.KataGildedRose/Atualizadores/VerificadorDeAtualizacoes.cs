@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MeuAcerto.Selecao.KataGildedRose.Enum;
+using KataGildedRose.Enum;
 
-namespace MeuAcerto.Selecao.KataGildedRose.Atualizadores
+namespace KataGildedRose.Atualizadores
 {
     public class VerificadorDeAtualizacoes
     {
@@ -12,6 +12,7 @@ namespace MeuAcerto.Selecao.KataGildedRose.Atualizadores
             throw new Exception("Tipo do Item Desconhecido");
         }
 
+        //Chama GetTipo e retorna o Tipo do Item
         public static VerificadorDeAtualizacoes InstanciaTipoItem(Item item)
         {
             if (GetTipo(item) == TipoItem.QueijoBrie)
@@ -28,6 +29,7 @@ namespace MeuAcerto.Selecao.KataGildedRose.Atualizadores
                 return new VerificadorDeAtualizacoes();
         }
 
+        //Descobre o Tipo do Item
         public static TipoItem GetTipo(Item item)
         {
             if (item.Nome.Equals("Queijo Brie Envelhecido"))
