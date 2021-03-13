@@ -33,7 +33,8 @@ namespace KataGildedRose.Repository
 					PrazoParaVenda = 5,
 					Qualidade = 49
 				},
-				new Item {Nome = "Bolo de Mana Conjurado", PrazoParaVenda = 3, Qualidade = 6}
+				new Item {Nome = "Bolo de Mana Conjurado", PrazoParaVenda = 3, Qualidade = 6},
+				new Item {Nome = "Ingressos para o concerto do Turisas Conjurado", PrazoParaVenda = 4, Qualidade = 11}
 			};
 
 			return itens;

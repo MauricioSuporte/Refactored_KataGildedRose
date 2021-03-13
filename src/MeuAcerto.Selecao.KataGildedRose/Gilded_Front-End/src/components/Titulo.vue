@@ -16,7 +16,7 @@ export default {
 <style scoped>
 h1 {
   color: #F5EF10;
-  font-size: 70px;
+  font-size: 50px;
   text-align: center;
   font-family: Brush Script MT;
 }
