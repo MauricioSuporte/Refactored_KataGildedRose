@@ -6,6 +6,7 @@ namespace KataGildedRose.Atualizadores
 {
     class AtualizarQualidadeLendario : VerificadorDeAtualizacoes
     {
+        //Atualiza Qualidade do Lendário, não faz nada
         public override void AtualizarQualidade(Item item){}
     }
 }

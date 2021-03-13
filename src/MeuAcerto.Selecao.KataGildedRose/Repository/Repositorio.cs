@@ -6,6 +6,7 @@ namespace KataGildedRose.Repository
 {
     public class Repositorio
     {
+		//Instancia lista de Itens
 		public IList<Item> GetItens()
         {
 			IList<Item> itens = new List<Item>{

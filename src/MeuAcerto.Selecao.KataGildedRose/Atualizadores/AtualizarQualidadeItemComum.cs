@@ -6,6 +6,7 @@ namespace KataGildedRose.Atualizadores
 {
     class AtualizarQualidadeItemComum : VerificadorDeAtualizacoes
     {
+        //Atualiza Qualidade do Item Comum
         public override void AtualizarQualidade(Item item)
         {
             item.PrazoParaVenda--;

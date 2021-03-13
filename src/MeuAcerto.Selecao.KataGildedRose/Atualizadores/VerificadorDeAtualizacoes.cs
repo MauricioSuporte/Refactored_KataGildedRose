@@ -7,6 +7,7 @@ namespace KataGildedRose.Atualizadores
 {
     public class VerificadorDeAtualizacoes
     {
+        //Atualiza a qualdiade podendo ser sobrescrito
         public virtual void AtualizarQualidade(Item item)
         {
             throw new Exception("Tipo do Item Desconhecido");

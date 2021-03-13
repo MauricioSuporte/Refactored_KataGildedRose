@@ -12,6 +12,7 @@ namespace KataGildedRose
             this.Itens = Itens;
         }
 
+        //Método que atualiza a Qualidade
         public void AtualizarQualidade()
         {
             foreach (Item item in Itens)

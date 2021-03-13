@@ -6,6 +6,7 @@ namespace KataGildedRose.Atualizadores
 {
     class AtualizarQualidadeQueijoBrie : VerificadorDeAtualizacoes
     {
+        //Atualiza Qualidade do Queijo Brie
         public override void AtualizarQualidade(Item item)
         {
             item.PrazoParaVenda--;
