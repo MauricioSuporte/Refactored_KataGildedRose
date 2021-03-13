@@ -52,11 +52,9 @@ export default {
       })
     },
     atualizarQualidade: () => {
-        axios.post(`https://localhost:44336/api`)
-            .then(()=> {
-                scopoItens.listar()
+        axios.post(`https://localhost:44336/api/att`, scopoItens.itens).then((res)=> {
+            scopoItens.itens = res.data
         })
-        alert('Finji q atualizei')
     }
   },
   created() {
