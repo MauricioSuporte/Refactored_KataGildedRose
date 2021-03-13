@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h2>Dia {{dias}}</h2>
         <table class="table table-bordered table-striped table-dark text-center">
             <thead>
                 <tr>
@@ -43,6 +44,7 @@ export default {
   data: () => {
     return {
       itens: [],
+      dias: 1
     }
   },
   methods: {
@@ -52,9 +54,14 @@ export default {
       })
     },
     atualizarQualidade: () => {
+        scopoItens.adicionarDias()
         axios.post(`https://localhost:44336/api/att`, scopoItens.itens).then((res)=> {
             scopoItens.itens = res.data
         })
+    },
+    adicionarDias: () => {
+        console.log(scopoItens.dias)
+        return scopoItens.dias++;
     }
   },
   created() {
@@ -67,5 +74,12 @@ export default {
 <style scoped>
 button {
   margin-bottom: 3%;
+}
+
+h2 {
+  color: #4beb7b;
+  font-size: 35px;
+  text-align: center;
+  font-family: Brush Script MT;
 }
 </style>
