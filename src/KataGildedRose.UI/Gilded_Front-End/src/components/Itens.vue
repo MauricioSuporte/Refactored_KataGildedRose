@@ -29,7 +29,6 @@
                 </tr>
             </tbody>
         </table>
-        <hr>
         <div class="text-center">
             <button v-on:click="atualizarQualidade()" type="button" class="btn btn-primary">Atualizar Qualidade</button>
         </div>
@@ -49,13 +48,13 @@ export default {
   },
   methods: {
     listar: () => {
-      axios.get(`https://localhost:44336/api`).then((res)=> {
+      axios.get(`https://localhost:44362/api`).then((res)=> {
         scopoItens.itens = res.data
       })
     },
     atualizarQualidade: () => {
         scopoItens.adicionarDias()
-        axios.post(`https://localhost:44336/api/att`, scopoItens.itens).then((res)=> {
+        axios.post(`https://localhost:44362/api/att`, scopoItens.itens).then((res)=> {
             scopoItens.itens = res.data
         })
     },
