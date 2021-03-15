@@ -1,9 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KataGildedRose", "MeuAcerto.Selecao.KataGildedRose\KataGildedRose.csproj", "{50414EF0-9805-480F-8494-756B1DEEA068}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-UI", "1-UI", "{58C3C949-E83B-45B1-B01C-3D37ADF384AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Domain", "2-Domain", "{D3BC0CC4-BA7B-4107-9AAC-1659CB54F644}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Infra", "3-Infra", "{859E33E4-DD93-46FA-B51A-FD3E1B33B024}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Testes", "4-Testes", "{FECA9EB5-5A39-438D-BEED-66A92DF7BBA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KataGildedRose.Domain", "KataGildedRose.Domain\KataGildedRose.Domain.csproj", "{2CC940CF-EFCE-45E3-882E-83B8CBD50D1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1-Data", "3.1-Data", "{35173388-A573-4CD3-9C47-F807952763C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2-CrossCuting", "3.2-CrossCuting", "{73F3CC7A-5933-46C9-BAB4-3905D97A251F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KataGildedRose.Infra.Data", "KataGildedRose.Infra.Data\KataGildedRose.Infra.Data.csproj", "{E040D558-0CAA-4124-A895-986329879F6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KataGildedRose.Infra.CrossCuting", "KataGildedRose.Infra.CrossCuting\KataGildedRose.Infra.CrossCuting.csproj", "{20747D5F-F3F3-4BAA-AD49-31E883F3A83E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KataGildedRose.UI", "KataGildedRose.UI\KataGildedRose.UI.csproj", "{1BC6A75E-0E1C-47F2-A9FB-97F8FA6A00B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KataGildedRose.Testes", "KataGildedRose.Testes\KataGildedRose.Testes.csproj", "{42016E53-A993-4272-B464-0997F10509F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +31,40 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{50414EF0-9805-480F-8494-756B1DEEA068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50414EF0-9805-480F-8494-756B1DEEA068}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50414EF0-9805-480F-8494-756B1DEEA068}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50414EF0-9805-480F-8494-756B1DEEA068}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC940CF-EFCE-45E3-882E-83B8CBD50D1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC940CF-EFCE-45E3-882E-83B8CBD50D1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC940CF-EFCE-45E3-882E-83B8CBD50D1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC940CF-EFCE-45E3-882E-83B8CBD50D1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E040D558-0CAA-4124-A895-986329879F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E040D558-0CAA-4124-A895-986329879F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E040D558-0CAA-4124-A895-986329879F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E040D558-0CAA-4124-A895-986329879F6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20747D5F-F3F3-4BAA-AD49-31E883F3A83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20747D5F-F3F3-4BAA-AD49-31E883F3A83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20747D5F-F3F3-4BAA-AD49-31E883F3A83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20747D5F-F3F3-4BAA-AD49-31E883F3A83E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC6A75E-0E1C-47F2-A9FB-97F8FA6A00B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC6A75E-0E1C-47F2-A9FB-97F8FA6A00B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BC6A75E-0E1C-47F2-A9FB-97F8FA6A00B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC6A75E-0E1C-47F2-A9FB-97F8FA6A00B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42016E53-A993-4272-B464-0997F10509F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42016E53-A993-4272-B464-0997F10509F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42016E53-A993-4272-B464-0997F10509F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42016E53-A993-4272-B464-0997F10509F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2CC940CF-EFCE-45E3-882E-83B8CBD50D1E} = {D3BC0CC4-BA7B-4107-9AAC-1659CB54F644}
+		{35173388-A573-4CD3-9C47-F807952763C4} = {859E33E4-DD93-46FA-B51A-FD3E1B33B024}
+		{73F3CC7A-5933-46C9-BAB4-3905D97A251F} = {859E33E4-DD93-46FA-B51A-FD3E1B33B024}
+		{E040D558-0CAA-4124-A895-986329879F6E} = {35173388-A573-4CD3-9C47-F807952763C4}
+		{20747D5F-F3F3-4BAA-AD49-31E883F3A83E} = {73F3CC7A-5933-46C9-BAB4-3905D97A251F}
+		{1BC6A75E-0E1C-47F2-A9FB-97F8FA6A00B4} = {58C3C949-E83B-45B1-B01C-3D37ADF384AA}
+		{42016E53-A993-4272-B464-0997F10509F4} = {FECA9EB5-5A39-438D-BEED-66A92DF7BBA5}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CE6A25BF-132F-433C-8773-16D8AA587010}
+		SolutionGuid = {724E5EBD-2E9B-4C3A-87C2-8FD4F6E80840}
 	EndGlobalSection
 EndGlobal
