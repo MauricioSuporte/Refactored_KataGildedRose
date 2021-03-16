@@ -5,6 +5,6 @@ namespace KataGildedRose.Domain.Interfaces.Repository
 {
     public interface IItemRepository
     {
-        public List<Item> GetItens();
+        List<Item> GetItens();
     }
 }

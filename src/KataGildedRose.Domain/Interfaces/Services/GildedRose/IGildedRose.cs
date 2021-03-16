@@ -4,6 +4,6 @@ namespace KataGildedRose.Domain.Interfaces.Services
 {
     public interface IGildedRose
     {
-        public void AtualizarQualidade();
+        void AtualizarQualidade();
     }
 }
