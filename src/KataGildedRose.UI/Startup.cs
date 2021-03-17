@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using KataGildedRose.Domain.Interfaces.Repository;
+using KataGildedRose.Domain.Interfaces.Services;
+using KataGildedRose.Domain.Services;
+using KataGildedRose.Infra.Data.Repository;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,11 +23,17 @@ namespace KataGildedRose
         // Este método é chamado em tempo de execução. Usar este método para adicionar services para o container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //IoC
+            services.AddScoped<IGildedRose, GildedRose>();
+            services.AddSingleton<IItemRepository, ItemRepository>();
+
             services.AddControllers();
+
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "Gilded_Front-End";
             });
+
         }
 
         // Este método é chamado em tempo de execução. Usar este método para configurar o HTTP request pipeline.
