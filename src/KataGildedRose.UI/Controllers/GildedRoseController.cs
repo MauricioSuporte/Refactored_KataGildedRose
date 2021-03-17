@@ -1,6 +1,6 @@
 ﻿using KataGildedRose.Domain.Entity;
-using KataGildedRose.Domain.Services;
-using KataGildedRose.Infra.Data.Repository;
+using KataGildedRose.Domain.Interfaces.Repository;
+using KataGildedRose.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,23 +11,31 @@ namespace KataGildedRose.Web.Controllers
     [ApiController]
     public class GildedRoseController : ControllerBase
     {
+        private readonly IGildedRose _gildedRoseService;
+        private readonly IItemRepository _itemRepository;
+
+        //Construtor
+        public GildedRoseController(IGildedRose gildedRoseService, IItemRepository itemRepository)
+        {
+            _gildedRoseService = gildedRoseService;
+            _itemRepository = itemRepository;
+        }
+
         //Index
         [HttpGet]
         public List<Item> Index()
         {
-            var itemRepository = new ItemRepository();
-            List<Item> itens = itemRepository.GetItens().ToList();
+            List<Item> itens = _gildedRoseService.InstanciaItens();
             return itens;
         }
 
         //Atualiza Itens
         [HttpPost]
         [Route("Att")]
-        public List<Item> AtualizarItens(List<Item> itens)
+        public List<Item> AtualizarItens()
         {
-            var gildedRoseService = new GildedRose(itens);
-            gildedRoseService.AtualizarQualidade();
-            return itens;
+            _gildedRoseService.AtualizarQualidade();
+            return _itemRepository.GetItens().ToList();
         }
     }
 }
