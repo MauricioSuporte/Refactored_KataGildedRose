@@ -6,10 +6,7 @@ namespace KataGildedRose.Infra.Data.Repository
 {
     public class ItemRepository : IItemRepository
 	{
-		//Instancia lista de Itens
-		public List<Item> GetItens()
-        {
-			List<Item> itens = new List<Item>{
+		List<Item> itens = new List<Item>{
 				new Item {Nome = "Corselete +5 DEX", PrazoParaVenda = 10, Qualidade = 20},
 				new Item {Nome = "Queijo Brie Envelhecido", PrazoParaVenda = 2, Qualidade = 0},
 				new Item {Nome = "Elixir do Mangusto", PrazoParaVenda = 5, Qualidade = 7},
@@ -37,6 +34,9 @@ namespace KataGildedRose.Infra.Data.Repository
 				new Item {Nome = "Ingressos para o concerto do Turisas Conjurado", PrazoParaVenda = 4, Qualidade = 11}
 			};
 
+		//Retorna lista de Itens
+		public List<Item> GetItens()
+        {
 			return itens;
 		}
 	}
