@@ -54,7 +54,7 @@ export default {
     },
     atualizarQualidade: () => {
         scopoItens.adicionarDias()
-        axios.post(`https://localhost:44362/api/att`, scopoItens.itens).then((res)=> {
+        axios.post(`https://localhost:44362/api/att`).then((res)=> {
             scopoItens.itens = res.data
         })
     },
