@@ -1,9 +1,7 @@
 ﻿using KataGildedRose.Domain.Entity;
-using KataGildedRose.Domain.Interfaces.Repository;
 using KataGildedRose.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace KataGildedRose.Web.Controllers
 {
@@ -12,13 +10,11 @@ namespace KataGildedRose.Web.Controllers
     public class GildedRoseController : ControllerBase
     {
         private readonly IGildedRose _gildedRoseService;
-        private readonly IItemRepository _itemRepository;
 
         //Construtor
-        public GildedRoseController(IGildedRose gildedRoseService, IItemRepository itemRepository)
+        public GildedRoseController(IGildedRose gildedRoseService)
         {
             _gildedRoseService = gildedRoseService;
-            _itemRepository = itemRepository;
         }
 
         //Index
@@ -35,7 +31,8 @@ namespace KataGildedRose.Web.Controllers
         public List<Item> AtualizarItens()
         {
             _gildedRoseService.AtualizarQualidade();
-            return _itemRepository.GetItens().ToList();
+            List<Item> itens = _gildedRoseService.InstanciaItens();
+            return itens;
         }
     }
 }
