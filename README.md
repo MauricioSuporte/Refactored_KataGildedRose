@@ -3,9 +3,8 @@
 
 
 
-Executar na pasta `Gilded_Front-End` os seguintes comando:
+Executar na pasta `Gilded_Front-End` o seguinte comando:
 
 * `npm install vue`
-* `npm install @vue/cli`
 
 Setar `KataGildedRose.UI` como projeto de inicialização
