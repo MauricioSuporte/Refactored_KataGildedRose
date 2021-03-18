@@ -41,9 +41,14 @@ let scopoItens = null;
 export default {
   name: 'Itens',
   data: () => {
+    if (sessionStorage.length == 0) {
+      sessionStorage.setItem("dias", 1);
+    } 
+    
+
     return {
       itens: [],
-      dias: 1
+      dias: sessionStorage.getItem("dias"),
     }
   },
   methods: {
@@ -59,8 +64,10 @@ export default {
         })
     },
     adicionarDias: () => {
-        console.log(scopoItens.dias)
-        return scopoItens.dias++;
+        var counter = sessionStorage.getItem("dias");
+        counter++;
+        sessionStorage.setItem("dias", counter);
+        scopoItens.dias = counter;
     }
   },
   created() {
@@ -68,6 +75,10 @@ export default {
     this.listar()
   }
 }
+
+window.addEventListener("beforeunload", function () {
+  localStorage.removeItem('dias');
+});
 </script>
 
 <style scoped>
