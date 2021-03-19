@@ -43,8 +43,7 @@ export default {
   data: () => {
     if (sessionStorage.length == 0) {
       sessionStorage.setItem("dias", 1);
-    } 
-    
+    }
 
     return {
       itens: [],
@@ -53,13 +52,13 @@ export default {
   },
   methods: {
     listar: () => {
-      axios.get(`https://localhost:44362/api`).then((res)=> {
+          axios.get(`https://localhost:44323/api`).then((res)=> {
         scopoItens.itens = res.data
       })
     },
     atualizarQualidade: () => {
         scopoItens.adicionarDias()
-        axios.post(`https://localhost:44362/api/att`).then((res)=> {
+        axios.post(`https://localhost:44323/api/att`).then((res)=> {
             scopoItens.itens = res.data
         })
     },
