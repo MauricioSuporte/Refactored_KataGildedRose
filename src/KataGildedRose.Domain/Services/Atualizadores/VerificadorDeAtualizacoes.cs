@@ -15,15 +15,16 @@ namespace KataGildedRose.Domain.Services
         //Chama GetTipo e retorna o Tipo do Item
         public static VerificadorDeAtualizacoes InstanciaTipoItem(Item item)
         {
-            if (GetTipo(item) == TipoItem.QueijoBrie)
+            var tipo = GetTipo(item);
+            if (tipo == TipoItem.QueijoBrie)
                 return new AtualizarQualidadeQueijoBrie();
-            else if (GetTipo(item) == TipoItem.Ingressos)
+            else if (tipo == TipoItem.Ingressos)
                 return new AtualizarQualidadeIngressos();
-            else if (GetTipo(item) == TipoItem.ItemComum)
+            else if (tipo == TipoItem.ItemComum)
                 return new AtualizarQualidadeItemComum();
-            else if (GetTipo(item) == TipoItem.Lendario)
+            else if (tipo == TipoItem.Lendario)
                 return new AtualizarQualidadeLendario();
-            else if (GetTipo(item) == TipoItem.Conjurado)
+            else if (tipo == TipoItem.Conjurado)
                 return new AtualizarQualidadeConjurado();
             else
                 return new VerificadorDeAtualizacoes();
